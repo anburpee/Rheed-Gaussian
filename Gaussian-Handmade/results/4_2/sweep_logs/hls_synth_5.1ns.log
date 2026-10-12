@@ -1,0 +1,6 @@
+Step 1: checking the inputs for 4_2_5.1ns
+Step 2: running Vivado at a 5.1 ns clock
+Step 3: reading the slack
+OK: timing met. WNS = 0.627 ns at a 5.1 ns clock
+reports: /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/reports/4_2_5.1ns_util.rpt
+         /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/reports/4_2_5.1ns_timing.rpt

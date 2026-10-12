@@ -1,0 +1,7 @@
+Running: xsim.dir/snap/xsimk -runall -simmode gui -testplusarg IMAGE_LIST=/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/python/gaussian_test_data/image_list_2.txt -testplusarg OUT_DIR=/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/scratch_dir -wdb snap.wdb -simrunnum 0 -socket 41227
+Design successfully loaded
+Design Loading Memory Usage: 30248 KB (Peak: 30248 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 116536 KB (Peak: 169516 KB)
+Simulation CPU Usage: 990 ms

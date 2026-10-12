@@ -1,0 +1,6 @@
+Step 1: checking the inputs for 8_2_7.8ns
+Step 2: running Vivado at a 7.8 ns clock (bitWidth=8, NFRAC=5, NFRAC_first=7)
+Step 3: reading the slack
+OK: timing met. WNS = 0.051 ns at a 7.8 ns clock
+reports: /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/reports/8_2_7.8ns_util.rpt
+         /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/reports/8_2_7.8ns_timing.rpt

@@ -1,0 +1,49 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/weights_n_tables/8_2/q_conv2d_batchnorm_1_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/weights_n_tables/8_2/q_conv2d_batchnorm_2_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/weights_n_tables/8_2/q_conv2d_batchnorm_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/weights_n_tables/8_2/q_dense_1_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/weights_n_tables/8_2/q_dense_2_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/weights_n_tables/8_2/q_dense_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/FIFO.sv" into library work
+INFO: [VRFC 10-311] analyzing module FIFO
+INFO: [VRFC 10-311] analyzing module FIFO_testbench
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/MaxPool2D_revised.sv" into library work
+INFO: [VRFC 10-311] analyzing module MaxPool2D
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/adderTree_1D.sv" into library work
+INFO: [VRFC 10-311] analyzing module adderTree_1D
+INFO: [VRFC 10-311] analyzing module adderTree_1D_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/conv2Dsum_reuse9_multichannel.sv" into library work
+INFO: [VRFC 10-311] analyzing module conv2Dsum_reuse9_multichannel
+WARNING: [VRFC 10-3467] initial value of parameter 'biasWidth' is omitted [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/conv2Dsum_reuse9_multichannel.sv:13]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/conv2Dwindow_reuse9_multichannel.sv" into library work
+INFO: [VRFC 10-311] analyzing module conv2Dwindow_reuse9_multichannel
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/conv2dFIFO_enabled.sv" into library work
+INFO: [VRFC 10-311] analyzing module conv2dFIFO_enabled
+INFO: [VRFC 10-311] analyzing module conv2dFIFO_enabled_testbench
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/conv2d_output_with_relu_reuse9_multichannel_revised.sv" into library work
+INFO: [VRFC 10-311] analyzing module conv2d_output_with_relu_reuse9_multichannel
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/denseLatencyWithControl_dense0.sv" into library work
+INFO: [VRFC 10-311] analyzing module denseLatencyWithControl_dense0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/denseLatencyWithControl_dense1.sv" into library work
+INFO: [VRFC 10-311] analyzing module denseLatencyWithControl_dense1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/denseLatencyWithControl_dense2.sv" into library work
+INFO: [VRFC 10-311] analyzing module denseLatencyWithControl_dense2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/flatten.sv" into library work
+INFO: [VRFC 10-311] analyzing module flatten
+INFO: [VRFC 10-311] analyzing module flatten_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/reluActivationLayer.sv" into library work
+INFO: [VRFC 10-311] analyzing module reluActivationLayer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/rheedGaussianWrapper.sv" into library work
+INFO: [VRFC 10-311] analyzing module rheedGaussianWrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/shift_add_with_mult.sv" into library work
+INFO: [VRFC 10-311] analyzing module shift_add_with_mult
+INFO: [VRFC 10-311] analyzing module mult_op
+INFO: [VRFC 10-311] analyzing module mult_op_wrap
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/sumOneColumnParameterized_dense0.sv" into library work
+INFO: [VRFC 10-311] analyzing module sumOneColumnParameterized_dense0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/sumOneColumnParameterized_dense1.sv" into library work
+INFO: [VRFC 10-311] analyzing module sumOneColumnParameterized_dense1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/verilog-modules/sumOneColumnParameterized_dense2.sv" into library work
+INFO: [VRFC 10-311] analyzing module sumOneColumnParameterized_dense2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/scripts/acc_tb.sv" into library work
+INFO: [VRFC 10-311] analyzing module acc_tb

@@ -1,0 +1,7 @@
+Running: xsim.dir/streaming_snapshot/xsimk -runall -simmode gui -testplusarg IMAGE_LIST=gaussian_test_data/image_list_50.txt -testplusarg OUT_DIR=streaming_traces_50 -wdb streaming_snapshot.wdb -simrunnum 0 -socket 44131
+Design successfully loaded
+Design Loading Memory Usage: 30244 KB (Peak: 30252 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 116532 KB (Peak: 169512 KB)
+Simulation CPU Usage: 114450 ms

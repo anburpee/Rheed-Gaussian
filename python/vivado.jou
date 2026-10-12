@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Nov 30 01:02:19 2025
+# Process ID: 2631267
+# Current directory: /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/python
+# Command line: vivado -mode batch -source script.tcl
+# Log file: /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/python/vivado.log
+# Journal file: /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/python/vivado.jou
+#-----------------------------------------------------------
+source script.tcl

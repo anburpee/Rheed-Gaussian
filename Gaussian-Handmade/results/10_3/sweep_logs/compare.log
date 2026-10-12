@@ -1,0 +1,88 @@
+Setup 10_3: 50 images, 5 outputs each, 1 ULP = 0.015625
+
+First 3 images (real values):
+  image 0
+    RTL    [0.375  0.4531 0.4844 0.4531 0.9844]
+    hls4ml [0.4844 0.4844 0.2188 0.2031 1.    ]
+    Keras  [0.4377 0.483  0.3802 0.3529 1.004 ]
+  image 1
+    RTL    [0.5469 0.4375 0.4844 0.4688 0.9375]
+    hls4ml [0.4844 0.4844 0.2188 0.1875 1.    ]
+    Keras  [0.4539 0.4836 0.3733 0.347  0.9995]
+  image 2
+    RTL    [0.7031 0.4375 0.6406 0.6406 0.9062]
+    hls4ml [0.4844 0.4844 0.2188 0.2031 1.    ]
+    Keras  [0.464  0.4791 0.5054 0.481  0.9958]
+
+Error over all outputs, in ULP:
+                       mean        max
+  RTL vs hls4ml       5.168     28.000
+  RTL vs Keras        4.237     17.172
+  hls4ml vs Keras     4.787     21.164
+
+hls4ml outputs are exact multiples of 1 ULP: True
+
+RTL minus hls4ml, how many outputs differ by each amount:
+   -7 ULP:    7 of 250
+   -6 ULP:    4 of 250
+   -5 ULP:    5 of 250
+   -4 ULP:    9 of 250
+   -3 ULP:   20 of 250
+   -2 ULP:   28 of 250
+   -1 ULP:   48 of 250
+   +0 ULP:   22 of 250
+   +1 ULP:    6 of 250
+   +2 ULP:    7 of 250
+   +3 ULP:    1 of 250
+   +4 ULP:    5 of 250
+   +5 ULP:    8 of 250
+   +6 ULP:    5 of 250
+   +7 ULP:   13 of 250
+   +8 ULP:   11 of 250
+   +9 ULP:    7 of 250
+  +10 ULP:    8 of 250
+  +11 ULP:    3 of 250
+  +12 ULP:    3 of 250
+  +13 ULP:    7 of 250
+  +14 ULP:    4 of 250
+  +15 ULP:    4 of 250
+  +16 ULP:    5 of 250
+  +17 ULP:    4 of 250
+  +18 ULP:    2 of 250
+  +19 ULP:    0 of 250
+  +20 ULP:    0 of 250
+  +21 ULP:    1 of 250
+  +22 ULP:    0 of 250
+  +23 ULP:    1 of 250
+  +24 ULP:    0 of 250
+  +25 ULP:    0 of 250
+  +26 ULP:    0 of 250
+  +27 ULP:    1 of 250
+  +28 ULP:    1 of 250
+
+Average of (RTL minus hls4ml) for each output, in ULP:
+   [-0.48 -1.54  9.04  9.06 -2.16]
+   (a value far from 0 means that output is shifted, not just noisy)
+
+Spread of each output across the images (standard deviation, in ULP):
+  Keras  [2.51 0.16 4.54 4.64 0.94]
+  hls4ml [0.24 0.   0.   0.49 0.  ]
+  RTL    [4.68 0.83 5.97 6.24 1.75]
+   (if Keras hardly changes between images, errors against it mostly measure offset and noise)
+
+Average offset from Keras for each output (signed, in ULP):
+  RTL    [-0.07 -1.45 -1.4  -1.19 -1.49]
+  hls4ml [  0.41   0.09 -10.44 -10.25   0.67]
+
+Correlation with Keras across the images, per output:
+  RTL    [-0.29  0.14  0.03 -0.   -0.29]
+  hls4ml [-0.04   nan   nan  0.34   nan]
+   (1 = follows Keras, 0 = unrelated, nan = the output is constant)
+
+RTL is closer to Keras than hls4ml is on 33 of 50 images
+  mean error vs Keras:  RTL 4.237 ULP,  hls4ml 4.787 ULP
+
+Compared with the earlier RTL run:
+  (skipped, no baseline at /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/results/10_3/rtl_final_baseline.csv)
+
+Saved the numbers for the graphs to /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/results/10_3/accuracy_summary.csv

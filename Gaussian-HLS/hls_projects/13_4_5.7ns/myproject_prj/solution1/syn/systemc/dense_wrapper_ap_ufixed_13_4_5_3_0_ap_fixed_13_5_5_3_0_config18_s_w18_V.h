@@ -1,0 +1,108 @@
+// ==============================================================
+// Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// ==============================================================
+#ifndef __dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V_H__
+#define __dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V_H__
+
+
+#include <systemc>
+using namespace sc_core;
+using namespace sc_dt;
+
+
+
+
+#include <iostream>
+#include <fstream>
+
+struct dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V_ram : public sc_core::sc_module {
+
+  static const unsigned DataWidth = 126;
+  static const unsigned AddressRange = 15;
+  static const unsigned AddressWidth = 4;
+
+//latency = 1
+//input_reg = 1
+//output_reg = 0
+sc_core::sc_in <sc_lv<AddressWidth> > address0;
+sc_core::sc_in <sc_logic> ce0;
+sc_core::sc_out <sc_lv<DataWidth> > q0;
+sc_core::sc_in<sc_logic> reset;
+sc_core::sc_in<bool> clk;
+
+
+sc_lv<DataWidth> ram[AddressRange];
+
+
+   SC_CTOR(dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V_ram) {
+        ram[0] = "0b110100010000000000111100000011011110000000101001111111001101011111001111101111111001111111111001101000000001001001111111100001";
+        ram[1] = "0b010000100000000111100111111110110110000001000010111111111010100000110001011111110001100111111100000111111110101110000000111000";
+        ram[2] = "0b110001000000000000111000000010101100000001110011111111111110100000000010000000001110010111111011010011111111110001111111000001";
+        ram[3] = "0b000001000111111100111111111111100001111110111001111111110110011111110001001111111001111000000010110111111111011100000001001111";
+        ram[4] = "0b110011110000000000000011111101010001111110100111111111111100100000000101100000000010110000000100001000000000001111111100100110";
+        ram[5] = "0b101001010000000010001100000000100011111111000101000001001101111111111110100000000010111000000000000100000000000111111111011101";
+        ram[6] = "0b110011011000000100100000000001001001111111111101111111000001011111011101110000010001001111111101001011111101001101111110100100";
+        ram[7] = "0b100110011000000001011111111101010101111111001111000000001000111111000111110000000001101000000101000100000010101101111110100110";
+        ram[8] = "0b000000100000000111011000000010010001111111000010111111010111100000100011110000000010010000000100100111111111010001111111010100";
+        ram[9] = "0b111100111000001001010011111101011011111111101110111111101011000000010010011111110111001000001000011100000000010100000000110010";
+        ram[10] = "0b000010111000001010011111111011011111111110100010000000100100111111100110101111101101110000000000001011111010101110000000101010";
+        ram[11] = "0b000010101111111110110011111111100011111101011110111111101110000000100010101111111010110111111110100100000010111010000000011110";
+        ram[12] = "0b111010010111111111001011111110100010000000011101111111101000111111011110010000000001111000000001101000000001011110000000011110";
+        ram[13] = "0b111001101000000000001011111111001001111111110101111111011000111111110111010000000001011111111111010000000000100010000000001100";
+        ram[14] = "0b111000000000000001010011111010111110000000110100000000100100111111111110010000000110000111111100010100000001011111111101111100";
+
+
+SC_METHOD(prc_write_0);
+  sensitive<<clk.pos();
+   }
+
+
+void prc_write_0()
+{
+    if (ce0.read() == sc_dt::Log_1) 
+    {
+            if(address0.read().is_01() && address0.read().to_uint()<AddressRange)
+              q0 = ram[address0.read().to_uint()];
+            else
+              q0 = sc_lv<DataWidth>();
+    }
+}
+
+
+}; //endmodule
+
+
+SC_MODULE(dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V) {
+
+
+static const unsigned DataWidth = 126;
+static const unsigned AddressRange = 15;
+static const unsigned AddressWidth = 4;
+
+sc_core::sc_in <sc_lv<AddressWidth> > address0;
+sc_core::sc_in<sc_logic> ce0;
+sc_core::sc_out <sc_lv<DataWidth> > q0;
+sc_core::sc_in<sc_logic> reset;
+sc_core::sc_in<bool> clk;
+
+
+dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V_ram* meminst;
+
+
+SC_CTOR(dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V) {
+meminst = new dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V_ram("dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V_ram");
+meminst->address0(address0);
+meminst->ce0(ce0);
+meminst->q0(q0);
+
+meminst->reset(reset);
+meminst->clk(clk);
+}
+~dense_wrapper_ap_ufixed_13_4_5_3_0_ap_fixed_13_5_5_3_0_config18_s_w18_V() {
+    delete meminst;
+}
+
+
+};//endmodule
+#endif

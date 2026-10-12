@@ -1,0 +1,215 @@
+Setup 13_4: 50 images, 5 outputs each, 1 ULP = 0.00390625
+
+First 3 images (real values):
+  image 0
+    RTL    [0.4102 0.4609 0.5859 0.5547 0.9727]
+    hls4ml [0.4883 0.4922 0.2266 0.1992 1.    ]
+    Keras  [0.4393 0.4829 0.3811 0.3522 1.0018]
+  image 1
+    RTL    [0.5938 0.4727 0.5703 0.5508 0.9414]
+    hls4ml [0.4883 0.4922 0.2266 0.1992 1.    ]
+    Keras  [0.4514 0.4835 0.3714 0.343  0.9986]
+  image 2
+    RTL    [0.7461 0.4648 0.7305 0.7188 0.8867]
+    hls4ml [0.4961 0.4922 0.2266 0.1992 1.    ]
+    Keras  [0.4638 0.4787 0.5041 0.4767 0.9902]
+
+Error over all outputs, in ULP:
+                       mean        max
+  RTL vs hls4ml      24.412    133.000
+  RTL vs Keras       18.017     91.596
+  hls4ml vs Keras    18.498     78.873
+
+hls4ml outputs are exact multiples of 1 ULP: True
+
+RTL minus hls4ml, how many outputs differ by each amount:
+  -29 ULP:    1 of 250
+  -28 ULP:    0 of 250
+  -27 ULP:    1 of 250
+  -26 ULP:    0 of 250
+  -25 ULP:    2 of 250
+  -24 ULP:    0 of 250
+  -23 ULP:    2 of 250
+  -22 ULP:    2 of 250
+  -21 ULP:    5 of 250
+  -20 ULP:    1 of 250
+  -19 ULP:    2 of 250
+  -18 ULP:    0 of 250
+  -17 ULP:    1 of 250
+  -16 ULP:    2 of 250
+  -15 ULP:    2 of 250
+  -14 ULP:    1 of 250
+  -13 ULP:    1 of 250
+  -12 ULP:    2 of 250
+  -11 ULP:    2 of 250
+  -10 ULP:    2 of 250
+   -9 ULP:    3 of 250
+   -8 ULP:    3 of 250
+   -7 ULP:    9 of 250
+   -6 ULP:    7 of 250
+   -5 ULP:   23 of 250
+   -4 ULP:   19 of 250
+   -3 ULP:   10 of 250
+   -2 ULP:    6 of 250
+   -1 ULP:   13 of 250
+   +0 ULP:    7 of 250
+   +1 ULP:    5 of 250
+   +2 ULP:    2 of 250
+   +3 ULP:    3 of 250
+   +4 ULP:    2 of 250
+   +5 ULP:    2 of 250
+   +6 ULP:    0 of 250
+   +7 ULP:    4 of 250
+   +8 ULP:    0 of 250
+   +9 ULP:    2 of 250
+  +10 ULP:    0 of 250
+  +11 ULP:    1 of 250
+  +12 ULP:    1 of 250
+  +13 ULP:    2 of 250
+  +14 ULP:    1 of 250
+  +15 ULP:    0 of 250
+  +16 ULP:    1 of 250
+  +17 ULP:    0 of 250
+  +18 ULP:    0 of 250
+  +19 ULP:    2 of 250
+  +20 ULP:    1 of 250
+  +21 ULP:    0 of 250
+  +22 ULP:    2 of 250
+  +23 ULP:    2 of 250
+  +24 ULP:    1 of 250
+  +25 ULP:    0 of 250
+  +26 ULP:    0 of 250
+  +27 ULP:    3 of 250
+  +28 ULP:    1 of 250
+  +29 ULP:    3 of 250
+  +30 ULP:    1 of 250
+  +31 ULP:    1 of 250
+  +32 ULP:    3 of 250
+  +33 ULP:    2 of 250
+  +34 ULP:    1 of 250
+  +35 ULP:    4 of 250
+  +36 ULP:    4 of 250
+  +37 ULP:    1 of 250
+  +38 ULP:    2 of 250
+  +39 ULP:    2 of 250
+  +40 ULP:    1 of 250
+  +41 ULP:    0 of 250
+  +42 ULP:    0 of 250
+  +43 ULP:    4 of 250
+  +44 ULP:    2 of 250
+  +45 ULP:    3 of 250
+  +46 ULP:    2 of 250
+  +47 ULP:    2 of 250
+  +48 ULP:    2 of 250
+  +49 ULP:    1 of 250
+  +50 ULP:    3 of 250
+  +51 ULP:    0 of 250
+  +52 ULP:    1 of 250
+  +53 ULP:    2 of 250
+  +54 ULP:    1 of 250
+  +55 ULP:    0 of 250
+  +56 ULP:    1 of 250
+  +57 ULP:    1 of 250
+  +58 ULP:    2 of 250
+  +59 ULP:    1 of 250
+  +60 ULP:    3 of 250
+  +61 ULP:    0 of 250
+  +62 ULP:    0 of 250
+  +63 ULP:    0 of 250
+  +64 ULP:    1 of 250
+  +65 ULP:    0 of 250
+  +66 ULP:    0 of 250
+  +67 ULP:    0 of 250
+  +68 ULP:    2 of 250
+  +69 ULP:    1 of 250
+  +70 ULP:    0 of 250
+  +71 ULP:    2 of 250
+  +72 ULP:    0 of 250
+  +73 ULP:    1 of 250
+  +74 ULP:    0 of 250
+  +75 ULP:    2 of 250
+  +76 ULP:    0 of 250
+  +77 ULP:    0 of 250
+  +78 ULP:    0 of 250
+  +79 ULP:    0 of 250
+  +80 ULP:    2 of 250
+  +81 ULP:    1 of 250
+  +82 ULP:    1 of 250
+  +83 ULP:    2 of 250
+  +84 ULP:    0 of 250
+  +85 ULP:    0 of 250
+  +86 ULP:    0 of 250
+  +87 ULP:    1 of 250
+  +88 ULP:    2 of 250
+  +89 ULP:    2 of 250
+  +90 ULP:    1 of 250
+  +91 ULP:    1 of 250
+  +92 ULP:    1 of 250
+  +93 ULP:    0 of 250
+  +94 ULP:    0 of 250
+  +95 ULP:    0 of 250
+  +96 ULP:    0 of 250
+  +97 ULP:    0 of 250
+  +98 ULP:    0 of 250
+  +99 ULP:    0 of 250
+  +100 ULP:    0 of 250
+  +101 ULP:    0 of 250
+  +102 ULP:    0 of 250
+  +103 ULP:    0 of 250
+  +104 ULP:    0 of 250
+  +105 ULP:    0 of 250
+  +106 ULP:    1 of 250
+  +107 ULP:    0 of 250
+  +108 ULP:    1 of 250
+  +109 ULP:    0 of 250
+  +110 ULP:    0 of 250
+  +111 ULP:    0 of 250
+  +112 ULP:    0 of 250
+  +113 ULP:    0 of 250
+  +114 ULP:    0 of 250
+  +115 ULP:    0 of 250
+  +116 ULP:    0 of 250
+  +117 ULP:    0 of 250
+  +118 ULP:    0 of 250
+  +119 ULP:    0 of 250
+  +120 ULP:    0 of 250
+  +121 ULP:    0 of 250
+  +122 ULP:    0 of 250
+  +123 ULP:    0 of 250
+  +124 ULP:    0 of 250
+  +125 ULP:    0 of 250
+  +126 ULP:    0 of 250
+  +127 ULP:    0 of 250
+  +128 ULP:    0 of 250
+  +129 ULP:    1 of 250
+  +130 ULP:    0 of 250
+  +131 ULP:    0 of 250
+  +132 ULP:    0 of 250
+  +133 ULP:    1 of 250
+
+Average of (RTL minus hls4ml) for each output, in ULP:
+   [ 3.3  -4.36 46.5  46.86 -7.56]
+   (a value far from 0 means that output is shifted, not just noisy)
+
+Spread of each output across the images (standard deviation, in ULP):
+  Keras  [ 9.99  0.7  18.45 18.7   3.8 ]
+  hls4ml [0.74 0.   0.3  0.3  0.  ]
+  RTL    [20.09  1.83 29.95 30.12  7.32]
+   (if Keras hardly changes between images, errors against it mostly measure offset and noise)
+
+Average offset from Keras for each output (signed, in ULP):
+  RTL    [ 6.37 -2.02  7.81  8.25 -4.53]
+  hls4ml [  3.07   2.34 -38.69 -38.61   3.03]
+
+Correlation with Keras across the images, per output:
+  RTL    [-0.29  0.04  0.02  0.01 -0.39]
+  hls4ml [-0.11   nan -0.13 -0.13   nan]
+   (1 = follows Keras, 0 = unrelated, nan = the output is constant)
+
+RTL is closer to Keras than hls4ml is on 29 of 50 images
+  mean error vs Keras:  RTL 18.017 ULP,  hls4ml 18.498 ULP
+
+Compared with the earlier RTL run:
+  (skipped, no baseline at /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/results/13_4/rtl_final_baseline.csv)
+
+Saved the numbers for the graphs to /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/results/13_4/accuracy_summary.csv

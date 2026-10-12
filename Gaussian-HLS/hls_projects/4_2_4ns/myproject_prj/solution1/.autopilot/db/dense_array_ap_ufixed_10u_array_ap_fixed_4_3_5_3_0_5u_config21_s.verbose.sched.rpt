@@ -1,0 +1,158 @@
+
+
+================================================================
+== Vivado HLS Report for 'dense_array_ap_ufixed_10u_array_ap_fixed_4_3_5_3_0_5u_config21_s'
+================================================================
+* Date:           Tue Oct  6 14:28:51 2026
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: kintexu
+* Target device:  xcku035-fbva676-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|     2.639|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   13|   14|   13|   14|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.58>
+ST_1 : Operation 4 [1/1] (1.75ns)   --->   "%empty = call { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } @_ssdm_op_Read.ap_fifo.volatile.i4P.i4P.i4P.i4P.i4P.i4P.i4P.i4P.i4P.i4P(i4* %data_stream_V_data_0_V, i4* %data_stream_V_data_1_V, i4* %data_stream_V_data_2_V, i4* %data_stream_V_data_3_V, i4* %data_stream_V_data_4_V, i4* %data_stream_V_data_5_V, i4* %data_stream_V_data_6_V, i4* %data_stream_V_data_7_V, i4* %data_stream_V_data_8_V, i4* %data_stream_V_data_9_V)" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 4 'read' 'empty' <Predicate = true> <Delay = 1.75> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 4> <Depth = 1> <FIFO>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%data_0_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 0" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 5 'extractvalue' 'data_0_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%data_1_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 1" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 6 'extractvalue' 'data_1_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%data_2_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 2" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 7 'extractvalue' 'data_2_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%data_3_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 3" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 8 'extractvalue' 'data_3_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%data_4_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 4" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 9 'extractvalue' 'data_4_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%data_5_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 5" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 10 'extractvalue' 'data_5_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%data_6_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 6" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 11 'extractvalue' 'data_6_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%data_7_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 7" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 12 'extractvalue' 'data_7_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%data_8_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 8" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 13 'extractvalue' 'data_8_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%data_9_V = extractvalue { i4, i4, i4, i4, i4, i4, i4, i4, i4, i4 } %empty, 9" [firmware/nnet_utils/nnet_dense_stream.h:38]   --->   Operation 14 'extractvalue' 'data_9_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [2/2] (0.83ns)   --->   "%call_ret = call fastcc { i4, i4, i4, i4, i4 } @"dense_wrapper<ap_ufixed<4, 2, 5, 3, 0>, ap_fixed<4, 3, 5, 3, 0>, config21>"(i4 %data_0_V, i4 %data_1_V, i4 %data_2_V, i4 %data_3_V, i4 %data_4_V, i4 %data_5_V, i4 %data_6_V, i4 %data_7_V, i4 %data_8_V, i4 %data_9_V)" [firmware/nnet_utils/nnet_dense_stream.h:46]   --->   Operation 15 'call' 'call_ret' <Predicate = true> <Delay = 0.83> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 2.58>
+ST_2 : Operation 16 [1/2] (2.58ns)   --->   "%call_ret = call fastcc { i4, i4, i4, i4, i4 } @"dense_wrapper<ap_ufixed<4, 2, 5, 3, 0>, ap_fixed<4, 3, 5, 3, 0>, config21>"(i4 %data_0_V, i4 %data_1_V, i4 %data_2_V, i4 %data_3_V, i4 %data_4_V, i4 %data_5_V, i4 %data_6_V, i4 %data_7_V, i4 %data_8_V, i4 %data_9_V)" [firmware/nnet_utils/nnet_dense_stream.h:46]   --->   Operation 16 'call' 'call_ret' <Predicate = true> <Delay = 2.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_data_0_V = extractvalue { i4, i4, i4, i4, i4 } %call_ret, 0" [firmware/nnet_utils/nnet_dense_stream.h:46]   --->   Operation 17 'extractvalue' 'tmp_data_0_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_data_1_V = extractvalue { i4, i4, i4, i4, i4 } %call_ret, 1" [firmware/nnet_utils/nnet_dense_stream.h:46]   --->   Operation 18 'extractvalue' 'tmp_data_1_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_data_2_V = extractvalue { i4, i4, i4, i4, i4 } %call_ret, 2" [firmware/nnet_utils/nnet_dense_stream.h:46]   --->   Operation 19 'extractvalue' 'tmp_data_2_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_data_3_V = extractvalue { i4, i4, i4, i4, i4 } %call_ret, 3" [firmware/nnet_utils/nnet_dense_stream.h:46]   --->   Operation 20 'extractvalue' 'tmp_data_3_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_data_4_V = extractvalue { i4, i4, i4, i4, i4 } %call_ret, 4" [firmware/nnet_utils/nnet_dense_stream.h:46]   --->   Operation 21 'extractvalue' 'tmp_data_4_V' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.75>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %res_stream_V_data_4_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1729, i32 0, i32 0, [1 x i8]* @p_str1730, [1 x i8]* @p_str1731, [1 x i8]* @p_str1732, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1733, [1 x i8]* @p_str1734)"   --->   Operation 22 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %res_stream_V_data_3_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1722, i32 0, i32 0, [1 x i8]* @p_str1723, [1 x i8]* @p_str1724, [1 x i8]* @p_str1725, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1726, [1 x i8]* @p_str1727)"   --->   Operation 23 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %res_stream_V_data_2_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1715, i32 0, i32 0, [1 x i8]* @p_str1716, [1 x i8]* @p_str1717, [1 x i8]* @p_str1718, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1719, [1 x i8]* @p_str1720)"   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %res_stream_V_data_1_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1708, i32 0, i32 0, [1 x i8]* @p_str1709, [1 x i8]* @p_str1710, [1 x i8]* @p_str1711, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1712, [1 x i8]* @p_str1713)"   --->   Operation 25 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %res_stream_V_data_0_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1701, i32 0, i32 0, [1 x i8]* @p_str1702, [1 x i8]* @p_str1703, [1 x i8]* @p_str1704, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1705, [1 x i8]* @p_str1706)"   --->   Operation 26 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_9_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1694, i32 0, i32 0, [1 x i8]* @p_str1695, [1 x i8]* @p_str1696, [1 x i8]* @p_str1697, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1698, [1 x i8]* @p_str1699)"   --->   Operation 27 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_8_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1687, i32 0, i32 0, [1 x i8]* @p_str1688, [1 x i8]* @p_str1689, [1 x i8]* @p_str1690, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1691, [1 x i8]* @p_str1692)"   --->   Operation 28 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_7_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1680, i32 0, i32 0, [1 x i8]* @p_str1681, [1 x i8]* @p_str1682, [1 x i8]* @p_str1683, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1684, [1 x i8]* @p_str1685)"   --->   Operation 29 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_6_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1673, i32 0, i32 0, [1 x i8]* @p_str1674, [1 x i8]* @p_str1675, [1 x i8]* @p_str1676, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1677, [1 x i8]* @p_str1678)"   --->   Operation 30 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_5_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1666, i32 0, i32 0, [1 x i8]* @p_str1667, [1 x i8]* @p_str1668, [1 x i8]* @p_str1669, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1670, [1 x i8]* @p_str1671)"   --->   Operation 31 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_4_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1659, i32 0, i32 0, [1 x i8]* @p_str1660, [1 x i8]* @p_str1661, [1 x i8]* @p_str1662, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1663, [1 x i8]* @p_str1664)"   --->   Operation 32 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_3_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1652, i32 0, i32 0, [1 x i8]* @p_str1653, [1 x i8]* @p_str1654, [1 x i8]* @p_str1655, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1656, [1 x i8]* @p_str1657)"   --->   Operation 33 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_2_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1645, i32 0, i32 0, [1 x i8]* @p_str1646, [1 x i8]* @p_str1647, [1 x i8]* @p_str1648, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1649, [1 x i8]* @p_str1650)"   --->   Operation 34 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_1_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1638, i32 0, i32 0, [1 x i8]* @p_str1639, [1 x i8]* @p_str1640, [1 x i8]* @p_str1641, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1642, [1 x i8]* @p_str1643)"   --->   Operation 35 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i4* %data_stream_V_data_0_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str1631, i32 0, i32 0, [1 x i8]* @p_str1632, [1 x i8]* @p_str1633, [1 x i8]* @p_str1634, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str1635, [1 x i8]* @p_str1636)"   --->   Operation 36 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @p_str44) nounwind" [firmware/nnet_utils/nnet_dense_stream.h:34]   --->   Operation 37 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str46) nounwind" [firmware/nnet_utils/nnet_dense_stream.h:49]   --->   Operation 38 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (1.75ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i4P.i4P.i4P.i4P.i4P(i4* %res_stream_V_data_0_V, i4* %res_stream_V_data_1_V, i4* %res_stream_V_data_2_V, i4* %res_stream_V_data_3_V, i4* %res_stream_V_data_4_V, i4 %tmp_data_0_V, i4 %tmp_data_1_V, i4 %tmp_data_2_V, i4 %tmp_data_3_V, i4 %tmp_data_4_V)" [firmware/nnet_utils/nnet_dense_stream.h:60]   --->   Operation 39 'write' <Predicate = true> <Delay = 1.75> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.26> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 4> <Depth = 1> <FIFO>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "ret void" [firmware/nnet_utils/nnet_dense_stream.h:62]   --->   Operation 40 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4ns, clock uncertainty: 0.5ns.
+
+ <State 1>: 2.58ns
+The critical path consists of the following:
+	fifo read on port 'data_stream_V_data_0_V' (firmware/nnet_utils/nnet_dense_stream.h:38) [33]  (1.75 ns)
+	'call' operation ('call_ret', firmware/nnet_utils/nnet_dense_stream.h:46) to 'dense_wrapper<ap_ufixed<4, 2, 5, 3, 0>, ap_fixed<4, 3, 5, 3, 0>, config21>' [44]  (0.835 ns)
+
+ <State 2>: 2.59ns
+The critical path consists of the following:
+	'call' operation ('call_ret', firmware/nnet_utils/nnet_dense_stream.h:46) to 'dense_wrapper<ap_ufixed<4, 2, 5, 3, 0>, ap_fixed<4, 3, 5, 3, 0>, config21>' [44]  (2.59 ns)
+
+ <State 3>: 1.75ns
+The critical path consists of the following:
+	fifo write on port 'res_stream_V_data_0_V' (firmware/nnet_utils/nnet_dense_stream.h:60) [51]  (1.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

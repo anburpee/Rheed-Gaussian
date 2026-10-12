@@ -1,0 +1,63 @@
+<InterfaceSummary>
+<RtlPorts>
+<name>q_conv2d_batchnorm_input_V_data_0_V</name>
+<CType>
+<TypeName>ap_ufixed 10 0 5 3 0</TypeName>
+<TypeWidth>10</TypeWidth>
+<PhysicalWidth>16</PhysicalWidth>
+</CType>
+<CFractionWidth>10</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>layer22_out_V_data_0_V</name>
+<CType>
+<TypeName>ap_fixed 20 7 5 3 0</TypeName>
+<TypeWidth>20</TypeWidth>
+<PhysicalWidth>24</PhysicalWidth>
+</CType>
+<CFractionWidth>13</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>layer22_out_V_data_1_V</name>
+<CType>
+<TypeName>ap_fixed 20 7 5 3 0</TypeName>
+<TypeWidth>20</TypeWidth>
+<PhysicalWidth>24</PhysicalWidth>
+</CType>
+<CFractionWidth>13</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>layer22_out_V_data_2_V</name>
+<CType>
+<TypeName>ap_fixed 20 7 5 3 0</TypeName>
+<TypeWidth>20</TypeWidth>
+<PhysicalWidth>24</PhysicalWidth>
+</CType>
+<CFractionWidth>13</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>layer22_out_V_data_3_V</name>
+<CType>
+<TypeName>ap_fixed 20 7 5 3 0</TypeName>
+<TypeWidth>20</TypeWidth>
+<PhysicalWidth>24</PhysicalWidth>
+</CType>
+<CFractionWidth>13</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>layer22_out_V_data_4_V</name>
+<CType>
+<TypeName>ap_fixed 20 7 5 3 0</TypeName>
+<TypeWidth>20</TypeWidth>
+<PhysicalWidth>24</PhysicalWidth>
+</CType>
+<CFractionWidth>13</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+</InterfaceSummary>
+

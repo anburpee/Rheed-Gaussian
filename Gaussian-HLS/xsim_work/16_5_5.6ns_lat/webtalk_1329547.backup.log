@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Oct  6 10:48:40 2026
+# Process ID: 1329547
+# Current directory: /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/xsim_work/16_5_5.6ns_lat
+# Command line: wbtcv -mode batch -source /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/xsim_work/16_5_5.6ns_lat/xsim.dir/hls_lat_snap/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/xsim_work/16_5_5.6ns_lat/webtalk.log
+# Journal file: /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/xsim_work/16_5_5.6ns_lat/webtalk.jou
+#-----------------------------------------------------------
+source /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/xsim_work/16_5_5.6ns_lat/xsim.dir/hls_lat_snap/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Oct  6 10:48:40 2026...
