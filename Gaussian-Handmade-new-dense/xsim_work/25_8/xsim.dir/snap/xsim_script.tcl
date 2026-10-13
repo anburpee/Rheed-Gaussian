@@ -1,0 +1,1 @@
+xsim {snap} -testplusarg IMAGE_LIST=/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade-new-dense/testing_data/25_8/image_list.txt -testplusarg OUT_DIR=/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade-new-dense/results/25_8 -autoloadwcfg -runall

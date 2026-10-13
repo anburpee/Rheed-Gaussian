@@ -1,0 +1,1 @@
+"acc_tb" -s "snap" -generic_top "bitWidth=19" -generic_top "NFRAC=11" -generic_top "NFRAC_first=18" 

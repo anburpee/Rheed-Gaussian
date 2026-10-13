@@ -61,6 +61,7 @@ def settings_for(bits, int_bits):
     """Environment variables for the run_*.sh scripts."""
     return {
         "TAG": f"{bits}_{int_bits}",
+        "PROJECT_DIR": str(BASE),
         "BIT_WIDTH": str(bits),
         "NFRAC": str(bits - int_bits - 1),
         "NFRAC_FIRST": str(bits - 1),
@@ -187,7 +188,7 @@ def hls_synthesis(settings, log_dir):
         run_if_needed(f"hls4ml Vivado at {period:g} ns",
                       ["bash", HLS_SCRIPTS / "run_synth.sh"],
                       log_dir / f"hls_synth_{period:g}ns.log", timing_report,
-                      dict(settings, CLOCK_PERIOD=f"{period:g}"))
+                      dict(settings, PROJECT_DIR=str(HLS_BASE), CLOCK_PERIOD=f"{period:g}"))
         wns, tns = synth_reports.read_timing(timing_report)
         return wns
 
@@ -198,7 +199,7 @@ def hls_synthesis(settings, log_dir):
     run_if_needed(f"hls4ml latency of the {period:g} ns build",
                   ["bash", HLS_SCRIPTS / "run_hls_lat.sh"],
                   log_dir / f"hls_latency_{period:g}ns.log", result_dir / "interval.txt",
-                  dict(settings, CLOCK_PERIOD=f"{period:g}"))
+                  dict(settings, PROJECT_DIR=str(HLS_BASE), CLOCK_PERIOD=f"{period:g}"))
     return period, slack, util, read_number(result_dir / "latency.txt"), read_number(result_dir / "interval.txt")
 
 
