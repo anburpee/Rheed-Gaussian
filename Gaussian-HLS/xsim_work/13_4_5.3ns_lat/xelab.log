@@ -3,12 +3,12 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: /tools/Disk_Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab hls_lat_tb -s hls_lat_snap -generic_top INPUT_BITS=13 -generic_top OUTPUT_BITS=26 
 Multi-threading is on. Using 10 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 13 differs from formal bit length 16 for port 'q_conv2d_batchnorm_input_V_data_0_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:45]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_0_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:49]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_1_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:52]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_2_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:55]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_3_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:58]
-WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_4_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:61]
+WARNING: [VRFC 10-3091] actual bit length 13 differs from formal bit length 16 for port 'q_conv2d_batchnorm_input_V_data_0_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:38]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_0_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:42]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_1_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:45]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_2_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:48]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_3_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:51]
+WARNING: [VRFC 10-3091] actual bit length 26 differs from formal bit length 32 for port 'layer22_out_V_data_4_V_TDATA' [/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/scripts/hls_lat_tb.sv:54]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -154,4 +154,4 @@ Built simulation snapshot hls_lat_snap
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/xsim_work/13_4_5.3ns_lat/xsim.dir/hls_lat_snap/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Tue Oct  6 10:48:48 2026...
+INFO: [Common 17-206] Exiting Webtalk at Mon Oct 12 08:42:22 2026...

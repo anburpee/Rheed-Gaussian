@@ -1,34 +1,27 @@
 `timescale 1ns / 1ps
 
-// Latency testbench for the hls4ml design (myproject).
-//
-// After reset it starts the design, offers zeros as input, and counts clock cycles from the very
-// first input the design accepts to the very first output. The data does not matter, only the timing.
-// This is the same measurement as lat_tb.sv does for the handmade design.
-//
-// Prints one line:   Latency = <N> cycles
-//
-// INPUT_BITS and OUTPUT_BITS must match the port widths of the generated design.
-// For the 8-bit design: input 8 bits, output 16 bits.
+// Feeds zeros. Prints, in clock cycles:
+//   Latency  = first accepted input -> first output
+//   Interval = first accepted input -> first accepted input of the next image
+// INPUT_BITS / OUTPUT_BITS must match the port widths (8-bit design: 8 and 16).
 
 module hls_lat_tb #(
     parameter INPUT_BITS  = 8,
     parameter OUTPUT_BITS = 16
 ) ();
 
-    localparam PERIOD = 10;                 // clock period in ns (simulation only)
-    localparam TIMEOUT_CYCLES = 200000;     // give up if there is still no output after this many cycles
+    localparam PERIOD = 10;
+    localparam TIMEOUT_CYCLES = 200000;
+    localparam PIXELS = 48 * 48;
 
     logic ap_clk = 0;
     logic ap_rst_n;
     logic ap_start;
 
-    // the input stream: one pixel at a time
     logic [INPUT_BITS-1:0] input_data;
     logic input_valid;
     wire  input_ready;
 
-    // the output streams: one per output value, each with its own valid
     wire [OUTPUT_BITS-1:0] output_data_0, output_data_1, output_data_2, output_data_3, output_data_4;
     wire output_valid_0, output_valid_1, output_valid_2, output_valid_3, output_valid_4;
 
@@ -66,14 +59,12 @@ module hls_lat_tb #(
     wire any_output_valid = output_valid_0 | output_valid_1 | output_valid_2 | output_valid_3 | output_valid_4;
 
 
-    // the clock
     initial begin
         ap_clk <= 0;
         forever #(PERIOD/2) ap_clk <= ~ap_clk;
     end
 
 
-    // reset (active low), then start the design and keep offering a zero input
     initial begin
         ap_rst_n <= 0;
         ap_start <= 0;
@@ -87,25 +78,32 @@ module hls_lat_tb #(
     end
 
 
-    // count cycles, and stop at the first output
-    int cycle = 0;                 // counts every clock edge
-    int first_input_cycle = -1;    // -1 means the first input has not been accepted yet
+    int cycle = 0;
+    int accepted = 0;
+    int first_input_cycle = 0;
+    int latency = -1;
+    int interval = -1;
 
     always @(posedge ap_clk) begin
         cycle <= cycle + 1;
 
-        // the very first input the design accepts
-        if (first_input_cycle < 0 && input_valid && input_ready)
-            first_input_cycle <= cycle;
+        if (input_valid && input_ready) begin
+            if (accepted == 0) first_input_cycle <= cycle;
+            if (accepted == PIXELS) interval <= cycle - first_input_cycle;
+            accepted <= accepted + 1;
+        end
 
-        // the very first output
-        if (any_output_valid) begin
-            $display("Latency = %0d cycles", cycle - first_input_cycle);
+        if (any_output_valid && latency < 0)
+            latency <= cycle - first_input_cycle;
+
+        if (latency >= 0 && interval >= 0) begin
+            $display("Latency = %0d cycles", latency);
+            $display("Interval = %0d cycles", interval);
             $finish;
         end
 
         if (cycle > TIMEOUT_CYCLES) begin
-            $display("ERROR: TIMEOUT -- no output after %0d cycles", TIMEOUT_CYCLES);
+            $display("ERROR: TIMEOUT (latency %0d, interval %0d)", latency, interval);
             $finish;
         end
     end

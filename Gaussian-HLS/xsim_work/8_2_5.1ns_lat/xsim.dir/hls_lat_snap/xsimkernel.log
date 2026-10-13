@@ -1,7 +1,7 @@
-Running: xsim.dir/hls_lat_snap/xsimk -runall -simmode gui -wdb hls_lat_snap.wdb -simrunnum 0 -socket 56897
+Running: xsim.dir/hls_lat_snap/xsimk -runall -simmode gui -wdb hls_lat_snap.wdb -simrunnum 0 -socket 55037
 Design successfully loaded
-Design Loading Memory Usage: 51252 KB (Peak: 51700 KB)
-Design Loading CPU Usage: 60 ms
+Design Loading Memory Usage: 51260 KB (Peak: 51708 KB)
+Design Loading CPU Usage: 40 ms
 Simulation completed
-Simulation Memory Usage: 123952 KB (Peak: 190520 KB)
-Simulation CPU Usage: 2090 ms
+Simulation Memory Usage: 123960 KB (Peak: 190528 KB)
+Simulation CPU Usage: 5120 ms

@@ -1,14 +1,5 @@
 """
-ref_models.py -- Keras and hls4ml predicted outputs (predict(), no traces) for ONE bit-width config.
-
-Why the Keras model is rebuilt for every width
-----------------------------------------------
-The trained model carries 8-bit quantizers. hls4ml applies those quantizers to the weights when it
-converts the model, so asking hls4ml for a 16-bit type would NOT give it 16-bit weights, while the RTL
-(which quantizes the folded float weights itself) would use them. To compare like with like, the model is
-rebuilt with quantizers at the requested width, loaded with the same trained weights, and that single
-model is what both the Keras reference and hls4ml see.  At (8, 2, 0) the rebuilt model must reproduce the
-trained model exactly; make_references() checks that and stops if it does not.
+Keras and hls4ml predicted outputs (predict(), no traces) for ONE bit-width config.
 
 Integer-bit convention: QKeras's, i.e. the sign bit is NOT counted.  quantized_bits(8, 2)  <->  ap_fixed<8, 3>.
 
@@ -28,7 +19,7 @@ L1_REG = 1e-4
 PART = "xcku035-fbva676-2-e"
 
 
-# ---------------------------------------------------------------- Keras model at a given width
+# Keras model at a given width ------------
 def build_model(bits, int_rest, int_first):
     """The notebook's architecture with quantizers at `bits`.
     int_first = integer bits of conv0's quantizers (0 in the trained design), int_rest = all other layers (2).
@@ -70,7 +61,7 @@ def build_model(bits, int_rest, int_first):
     ], name="pp_model")
 
 
-# ---------------------------------------------------------------- hls4ml configuration
+# Hls4ml configuration ------------
 def hls_layer_config(bits, int_rest, int_first):
     """Per-layer precisions generalizing the validated 8-bit config (see the notebook's `config['LayerName']`).
     QKeras int bits I (sign not counted) become ap_fixed<W, I+1>; relu outputs are ap_ufixed<W, I>."""
@@ -149,7 +140,7 @@ def hls_predict(model, images, bits, int_rest, int_first, out_dir):
     return np.asarray(hls_model.predict(np.ascontiguousarray(images, dtype=np.float32)))
 
 
-# ---------------------------------------------------------------- entry point
+# Entry point ------------
 def make_references(trained, images, bits, int_rest, int_first, out_dir, hls_dir, run_hls=True):
     """Save Keras (trained and rebuilt-at-width) and hls4ml predictions for `images` (N,48,48,1)."""
     out_dir = Path(out_dir)

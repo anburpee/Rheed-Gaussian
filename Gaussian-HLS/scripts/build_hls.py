@@ -1,24 +1,16 @@
 #!/home/aya/miniconda3/envs/tf211-env/bin/python
 """
-build_hls.py -- generate the hls4ml RTL for one bit-width setup.
+Builds the hls4ml RTL for one setup (rebuilds the Keras model at this width, converts, runs C-synthesis).
+RTL: Gaussian-HLS/hls_projects/<bits>_<int>_<period>ns/myproject_prj/solution1/syn/verilog/
 
-It rebuilds the Keras model at the requested width (same trained weights), converts it with
-hls4ml, and runs HLS C-synthesis. The RTL ends up in
+    /home/aya/miniconda3/envs/tf211-env/bin/python build_hls.py --bits 8 --int 2 [--clock-period 8]
 
-    Gaussian-HLS/hls_projects/<bits>_<int>_<period>ns/myproject_prj/solution1/syn/verilog/
-
-Usage (needs TensorFlow, QKeras and hls4ml, and vivado_hls on the PATH):
-    /home/aya/miniconda3/envs/tf211-env/bin/python build_hls.py --bits 8 --int 2
-    /home/aya/miniconda3/envs/tf211-env/bin/python build_hls.py --bits 8 --int 2 --clock-period 8
-
---clock-period is the target (in ns) that HLS builds for. A tighter target makes HLS add pipeline
-stages, so the cycle count and the resources change, but the results do not.
+--clock-period is the target HLS schedules for: it changes cycle count and resources, not the outputs.
 """
 import argparse
 import re
 import sys
 
-# The shared helpers live in the Gaussian-Handmade scripts folder.
 sys.path.insert(0, "/home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/scripts")
 
 import ref_models
@@ -26,13 +18,11 @@ from common import HLS_BASE, MODEL_FILE, load_model
 
 
 def read_estimate(project_dir):
-    """The latency and interval that HLS estimated (from its C-synthesis report).
-    Returns (latency_min, latency_max, interval_min, interval_max), or None if the report is missing."""
+    """HLS estimate (latency_min, latency_max, interval_min, interval_max) from the C-synthesis report, or None."""
     report = project_dir / "myproject_prj" / "solution1" / "syn" / "report" / "myproject_csynth.rpt"
     if not report.exists():
         return None
 
-    # The first table with four whole numbers is the latency summary, e.g.   |  34571|  34577|  6914|  34562| dataflow |
     match = re.search(r"\|\s*(\d+)\|\s*(\d+)\|\s*(\d+)\|\s*(\d+)\|\s*\w+\s*\|", report.read_text())
     if match is None:
         return None
@@ -65,7 +55,6 @@ def main():
     hls_model = ref_models.convert_to_hls(model, args.bits, args.int_bits, q_first_int,
                                           project_dir, args.clock_period)
 
-    # C-synthesis only: this writes the RTL. Our own Vivado runs do the utilization and timing.
     print("running HLS C-synthesis (this takes a few minutes)")
     hls_model.build(csim=False, synth=True, vsynth=False, export=False)
 
@@ -78,7 +67,7 @@ def main():
     if estimate is not None:
         latency_min, latency_max, interval_min, interval_max = estimate
         print(f"HLS estimate: latency {latency_min} to {latency_max} cycles, interval {interval_min} to {interval_max} cycles")
-        print("(only an estimate: run_hls_lat.sh measures the real latency)")
+        print("(estimate only; run_hls_lat.sh measures the real values)")
 
 
 if __name__ == "__main__":

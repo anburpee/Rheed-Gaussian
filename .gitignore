@@ -1,2 +1,4 @@
 *.h5
 Models
+*.log
+./Gaussian-HLS/hls_projects

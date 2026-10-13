@@ -1,6 +1,0 @@
-Step 1: checking the inputs for 4_2_4ns
-Step 2: compiling
-Step 3: elaborating (INPUT_BITS=4, OUTPUT_BITS=16)
-Step 4: simulating
-Step 5: reading the result
-OK: latency = 30642 cycles -> /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/results/4_2_4ns/latency.txt

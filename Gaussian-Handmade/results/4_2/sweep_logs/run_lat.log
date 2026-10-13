@@ -1,6 +1,0 @@
-Step 1: checking the inputs for 4_2
-Step 2: compiling
-Step 3: elaborating (bitWidth=4, NFRAC=1, NFRAC_first=3)
-Step 4: simulating
-Step 5: reading the result
-OK: latency = 16724 cycles -> /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-Handmade/results/4_2/latency.txt

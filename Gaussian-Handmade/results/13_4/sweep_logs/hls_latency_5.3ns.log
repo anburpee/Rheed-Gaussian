@@ -1,6 +1,6 @@
-Step 1: checking the inputs for 13_4_5.3ns
+Step 1: checking inputs for 13_4_5.3ns
 Step 2: compiling
-Step 3: elaborating (INPUT_BITS=13, OUTPUT_BITS=26)
+Step 3: elaborating
 Step 4: simulating
 Step 5: reading the result
-OK: latency = 30568 cycles -> /home/aya/HLS4ML_VS_MANUAL/src/hdl/RHEED_Gaussian/Gaussian-HLS/results/13_4_5.3ns/latency.txt
+OK: latency = 30568 cycles, interval = 32276 cycles

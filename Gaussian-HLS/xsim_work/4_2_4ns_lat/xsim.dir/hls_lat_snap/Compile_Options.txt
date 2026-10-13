@@ -1,1 +1,0 @@
-"hls_lat_tb" -s "hls_lat_snap" -generic_top "INPUT_BITS=4" -generic_top "OUTPUT_BITS=16" 

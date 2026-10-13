@@ -1,6 +1,6 @@
 # Vivado synthesis and implementation of the hls4ml design for ONE clock period.
 # Called by run_synth.sh:
-#   vivado -mode batch -source synth.tcl -tclargs <rtl_dir> <period_ns> <util_report> <timing_report>
+# vivado -mode batch -source synth.tcl -tclargs <rtl_dir> <period_ns> <util_report> <timing_report>
 
 lassign $argv rtl_dir period util_report timing_report
 

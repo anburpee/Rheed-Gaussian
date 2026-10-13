@@ -1,13 +1,6 @@
 """
-synth_reports.py -- read the numbers out of the Vivado reports.
-
-As a script (prints utilization and slack for one run):
-    python synth_reports.py handmade 8_2 10        # design, setup, clock period in ns
-    python synth_reports.py hls 8_2 10
-
-As a module (used by the sweep):
-    read_util(util_report, top_module)      -> dict with the cell counts of the whole design
-    read_timing(timing_report)              -> (WNS, TNS) in ns
+Reads Vivado reports.
+    python synth_reports.py <handmade|hls> <tag> <clock period ns>     e.g.  handmade 8_2 10
 """
 import re
 import sys
@@ -15,13 +8,12 @@ import sys
 from common import BASE, HLS_BASE
 
 
-# The device is the Kintex UltraScale XCKU035 (AMD DS890, Table 7).
+# Kintex UltraScale XCKU035 (DS890)
 DEVICE_LUTS = 203128
 DEVICE_FFS = 406256
 DEVICE_BRAM_TILES = 540
 DEVICE_DSPS = 1700
 
-# design name -> (project folder, top module)
 DESIGNS = {
     "handmade": (BASE, "rheedGaussianWrapper"),
     "hls": (HLS_BASE, "myproject"),
@@ -29,9 +21,7 @@ DESIGNS = {
 
 
 def read_util(util_report, top_module):
-    """The utilization of the whole design, from the top row of the hierarchy table.
-    That row has nine numbers after the module name:
-    total LUTs, logic LUTs, LUTRAMs, SRLs, FFs, RAMB36, RAMB18, URAM, DSP48 blocks."""
+    """Top row of the hierarchy table: total LUTs, logic LUTs, LUTRAMs, SRLs, FFs, RAMB36, RAMB18, URAM, DSP48."""
     with open(util_report) as file:
         text = file.read()
 
@@ -46,11 +36,10 @@ def read_util(util_report, top_module):
 
 
 def read_timing(timing_report):
-    """(WNS, TNS) in ns, from the first table of the timing summary."""
+    """(WNS, TNS) in ns from the first table of the timing summary."""
     with open(timing_report) as file:
         text = file.read()
 
-    # The table: a header line, a line of dashes, then the numbers. WNS and TNS are the first two.
     match = re.search(r"WNS\(ns\)\s+TNS\(ns\).*?\n\s*-+.*?\n\s*(-?\d+\.\d+)\s+(-?\d+\.\d+)", text)
     if match is None:
         raise ValueError(f"no timing summary in {timing_report}")
@@ -58,7 +47,7 @@ def read_timing(timing_report):
 
 
 def bram_tiles(util):
-    """Vivado counts a RAMB18 as half a block RAM tile."""
+    """A RAMB18 is half a tile."""
     return util["ramb36"] + util["ramb18"] / 2
 
 
@@ -87,7 +76,6 @@ def main():
     print(f"  DSP    {util['dsp48']:7d}   {100 * util['dsp48'] / DEVICE_DSPS:5.1f} %")
     print(f"  slack (WNS) {wns:+.3f} ns, TNS {tns:.3f} ns")
 
-    # target period minus slack is roughly the smallest period that would still work
     if wns >= 0:
         print(f"  timing met; a period of about {float(period) - wns:.2f} ns should still work")
     else:
