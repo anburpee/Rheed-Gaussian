@@ -1,0 +1,1 @@
+"hls_lat5_tb" -s "snap" -generic_top "INPUT_BITS=22" -generic_top "OUTPUT_BITS=44" 

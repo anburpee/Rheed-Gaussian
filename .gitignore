@@ -2,3 +2,4 @@
 Models
 *.log
 ./Gaussian-HLS/hls_projects
+*__pychche__*

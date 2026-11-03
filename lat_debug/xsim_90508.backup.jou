@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Oct 26 18:47:42 2026
+# Process ID: 90508
+# Current directory: /home/aya/lat_debug
+# Command line: xsim -mode tcl -source {xsim.dir/dbg_snap/xsim_script.tcl}
+# Log file: /home/aya/lat_debug/xsim.log
+# Journal file: /home/aya/lat_debug/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/dbg_snap/xsim_script.tcl
+run -all

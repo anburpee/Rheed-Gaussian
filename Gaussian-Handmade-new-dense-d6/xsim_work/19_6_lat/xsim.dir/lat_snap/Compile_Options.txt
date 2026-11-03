@@ -1,0 +1,1 @@
+"lat_tb" -s "lat_snap" -generic_top "bitWidth=19" -generic_top "NFRAC=12" -generic_top "NFRAC_first=18" 

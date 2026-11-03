@@ -70,7 +70,7 @@ def plot_utilization(rows):
 
     axis.add_artist(axis.legend(handles=resource_lines, loc="upper right"))
     design_legend(axis)
-    axis.set_title("Utilization of HLS4ML vs Manual on the Gaussian Model")
+    axis.set_title("Resource Utilization")
     set_bit_axis(axis, bits)
     axis.set_ylim(0, max(highest * 1.4, 1))
     axis.set_ylabel("Utilization (%)")

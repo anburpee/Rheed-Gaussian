@@ -57,7 +57,7 @@ def plot_utilization(row, tag, graph_dir):
     axis.set_xticklabels(names)
     axis.set_ylabel("Utilization (% of device)")
     axis.set_ylim(0, max(handmade + hls + [1]) * 1.2)
-    axis.set_title(f"Resource utilization, setup {tag}")
+    axis.set_title("Resource Utilization")
     axis.legend()
     figure.savefig(graph_dir / "utilization.png", dpi=150, bbox_inches="tight")
 
